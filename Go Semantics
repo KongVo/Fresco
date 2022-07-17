@@ -1,0 +1,16 @@
+Try it Out - Find the length of a String 'FrescoPlay'
+
+
+package main
+import ("fmt"
+       "bufio"
+       "os")
+func main() {
+    //Enter your code here. Read input from STDIN. Print output to STDOUT
+    var reader = bufio.NewReader(os.Stdin)
+    message, _ := reader.ReadString('\n')
+    
+    length :=len(message)
+    fmt.Println(length)
+    
+}
