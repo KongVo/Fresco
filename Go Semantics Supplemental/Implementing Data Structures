@@ -1,0 +1,134 @@
+//1. Reverse Linked List
+
+package main
+import "fmt"
+func main() {
+		link := LinkedList{}
+
+		var ele rune
+		var size int
+		var sli = make([]int,0,1)
+		size = cap(sli)
+		for i:=0; i<=size; i++{
+			if i>=len(sli){
+				size=size+1
+			}
+			ele = 0
+			//fmt.Println("Enter a number to add: ")
+			fmt.Scan(&ele)
+			if ele==0 {
+				//fmt.Println("Stopping!")
+				break
+			}
+			sli = append(sli, int(ele))
+		}
+		
+		sli = sli[1:]
+		for _, x := range sli {
+				link.Push(x)        
+			}
+		fmt.Println("Head:", link.head.key)
+		fmt.Println("Tail:", link.tail.key)
+		link.Display()
+		fmt.Println("head:", link.tail.key)
+		fmt.Println("tail:", link.head.key)
+		link.Reverse()
+	}
+	
+	type Node struct {
+		prev *Node
+		next *Node
+		key interface{}
+	}
+	
+	type LinkedList struct {
+		head *Node
+		tail *Node
+	}
+	func (ll *LinkedList) Push(key interface{}) {
+		list := &Node{
+			next: ll.head,
+			key: key,
+		}
+		if ll.head != nil {
+			ll.head.prev = list
+		}
+		ll.head = list
+	
+		l := ll.head
+		for l.next != nil {
+			l = l.next
+		}
+		ll.tail = l
+	}
+	func (ll *LinkedList) Display() {
+		list := ll.head
+		for list != nil {
+			fmt.Printf("%+v ", list.key)
+			list = list.next
+		}
+		fmt.Println()
+	}
+	
+	// normal display function
+	func Display(list *Node) {
+		for list != nil {
+			fmt.Printf("%v ", list.key)
+			list = list.next
+		}
+		fmt.Println()
+	}
+	func (ll *LinkedList) Reverse() {
+		currentNode := ll.head
+		var next *Node
+		var previousNode *Node
+		ll.tail = ll.head
+	
+		for currentNode != nil {
+			next, currentNode.next = currentNode.next, previousNode
+			previousNode, currentNode = currentNode, next
+		}
+		ll.head = previousNode
+		Display(ll.head)
+}
+
+//2. Queue Implementation
+
+		package main
+		import "fmt"
+		func main() {
+		        var ele rune
+		        var size int
+		        var sli = make([]int,0,1)
+		        size = cap(sli)
+		        for i:=0; i<=size; i++{
+		            if i>=len(sli){
+		                size=size+1
+		            }
+		            ele = 0
+		            //fmt.Println("Enter a number to add: ")
+		            fmt.Scan(&ele)
+		            if ele==0 {
+		                //fmt.Println("Stopping!")
+		                break
+		            }
+		            sli = append(sli, int(ele))
+		        }
+		        
+		        
+		        if len(sli) <= 3 {
+		            fmt.Println("Out of Bounds")
+		        }else {
+		            sli = sli[1:]
+		            sli = RemoveIndex(sli, 0)
+		            sli = RemoveIndex(sli, 0)
+		            sli = RemoveIndex(sli, 0)
+		            fmt.Println(sli)
+		        }
+		        
+		    }
+		    
+		    
+		    func RemoveIndex(s []int, index int) []int {
+		        return append(s[:index], s[index+1:]...)
+    }
