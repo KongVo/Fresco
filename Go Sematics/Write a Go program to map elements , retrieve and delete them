@@ -1,0 +1,22 @@
+//Try it Out - Write a Go program to map elements , retrieve and delete them
+
+package main
+import "fmt"
+func main() {
+   x := make(map[string]string)
+    x["H"] = "Hydrogen"
+    x["He"] = "Helium"
+    x["Li"] = "Lithium"
+    x["B"] = "Boron"
+    x["Be"] = "Beryllium"
+ 
+    findLi := x["Li"]
+    fmt.Println(findLi)
+    findB := x["B"]
+    fmt.Println("Before deletion:", findB)
+    delete(x, "B")
+    
+    findB2 := x["B"]  
+    
+    fmt.Println("After deletion:", findB2)
+}

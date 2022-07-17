@@ -1,0 +1,31 @@
+//Try it Out - Narcissistic number using GO
+
+package main
+import "fmt"
+func main() {
+    var n int
+    _, err := fmt.Scanln(&n)
+    if err != nil || n < 0 {
+        fmt.Println("False")
+        return
+    }
+    digits := 0
+    for m := n; m > 0; m /= 10 {
+        digits++
+    }
+    sum := 0
+    for m := n; m > 0; m /= 10 {
+        digit := m % 10
+        pow := 1
+        for i := 1; i <= digits; i++ {
+            pow *= digit
+        }
+        sum += pow
+    }
+    if sum == n {
+        fmt.Println("True")
+    } else {
+        fmt.Println("False")
+    }
+}
+

@@ -1,0 +1,26 @@
+//Try it Out - Program to check a number to be Pythagorean Prime
+
+
+package main  
+import (  
+ "fmt"  
+)  
+func CheckPrime(number int) {  
+ 
+ if number == 0 || number == 1 || number < 1 || number >= 100{  
+  fmt.Println("FALSE")  
+ } else {  
+   if number%4 == 1{  
+   fmt.Println("TRUE")  
+  } else{
+      fmt.Println("FALSE")  
+  }
+ 
+ }  
+ 
+}  
+func main() {  
+    var num int
+     fmt.Scan(&num)
+     CheckPrime(num)  
+}  

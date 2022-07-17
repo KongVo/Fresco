@@ -1,0 +1,44 @@
+//Try it Out - Create a Program for Slicing
+
+
+package main
+import "fmt"
+func main() {
+   
+    var ele rune
+    var size int
+    var sli = make([]int,0,1)
+    size = cap(sli)
+    for i:=0; i<=size; i++{
+        if i>=len(sli){
+            size=size+1
+        }
+        ele = 0
+           fmt.Scan(&ele)
+        if ele==0 {
+            //fmt.Println("Stop")
+            break
+        }
+        sli = append(sli, int(ele))
+    }
+    
+    sli = sli[1:]
+    
+        var sumOdd int
+        var sumEven int
+        var sumTotal int
+        for i, _ := range sli {
+            if i%2 != 0 {
+                sumOdd = sli[i] + sumOdd
+                
+            }else
+            {
+                sumEven = sli[i] + sumEven
+            }
+        }
+        sumTotal = sumEven - sumOdd
+
+        fmt.Println(sumEven)
+        fmt.Println(sumOdd)
+        fmt.Println(sumTotal)
+    }
