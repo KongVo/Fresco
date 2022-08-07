@@ -1,0 +1,24 @@
+Score 17/20
+
+What are the different aspects of data that need to be analyzed when understanding data?	"
+All the options"
+Predictive Experiment can be used directly after creating it from a training experiment. Select the appropriate option as answer.	False, changes must be done to facilitate proper web service inputs/outputs.
+Azure ML Studio's import data item does not allow loading data from on-premises SQL database.	FALSE
+Get the required size of a dataset from a large amount of accumulated data is called ________.	Statistical Sampling
+Which of the following is false about Train Data and Test Data in Azure ML Studio _________?	Train data and Test data split should follow a thumb-rule of 80 : 20.
+All our published web services can be considered as _________.	Azure Resources
+Data Visualization in Azure ML Studio is possible through ________.	Both inbuilt and jupyter notebook
+When data is classified into two categories or classes, what type of classification is it?	Binary
+In Azure Stream analytics, webservice is added as a ___________.	function
+Average amount of money spent by a user at a Supermarket can be predicted through ____________ .	Regression
+Quality of our classifier can be determined through _________.	Confusion Matrix
+Collaboration in Azure Machine Learning is possible through ________.	Invitation to Workspace
+In regression, On predictions based on transformed data which has a different unit compared the actual value, which errors best describes the quality of the model ____________	Absolute Errors
+Which of the following is the best model to predict the number of earthquakes occurring at a place based on historical data?	Poisson Regression
+Select the option that represents the correct order of following tasks: (A) Predictive Experiment (B) Training Experiment (C) Model Evaluation (D) Data Preprocessing (E) API Publishing	B , D, C, A, E
+What is the Azure CLI command to create a machine learning workspace?	az ml workspace create -w $workspace -g $resource
+To prevent running Import Data module each time, we run an experiment, when data is imported from Azure Blob storage, we can use _____________.	"
+Stored Results"
+A 5GB data file attained from a U-SQL job can be used for a training experiment through __________.	Any of the options
+A K-Means Cluster is said to be well defined if the cluster is ________.	No such metric
+Which of the following is the preferred model to find the best fit line for a data set using linear regression?	Least square error
