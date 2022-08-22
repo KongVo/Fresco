@@ -1,0 +1,34 @@
+Indextest.js
+
+var assert = require("assert");
+var crud = require('../src/index');
+describe('Crud application', function(){
+    //write your code here
+    var assert = require("assert");
+var crud = require('../src/index');
+describe('Crud application', function(){
+    //write your code here
+   it('addDetails()', function () {
+     assert.deepStrictEqual(crud.addDetails(), ['one']);
+   });
+   it('deleteDetails()', function () {
+     assert.equal(crud.deleteDetails(), 'two');
+   });
+   it('editDetails()', function () {
+     assert.deepStrictEqual(crud.editDetails(), ['three']);
+   });
+  it('updateDetails()', function () {
+    assert.deepStrictEqual(crud.updateDetails(), ['one', 'two', 'three']);  
+ });
+it('detailsPop()', function () {
+    assert.deepStrictEqual(crud.detailsPop(), ['one',]);
+});
+  it('concatData()', function () {
+     assert.deepStrictEqual(crud.concatData(), ["one", "two"]);
+  });
+});
+});
+
+Package.json
+
+test: "mocha"
