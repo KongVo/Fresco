@@ -1,0 +1,77 @@
+Usertest.js
+
+const app = require("../src/app");
+const User = require("../src/db/models/user");
+const {userOne, userOneObjectID, setUpDataBase} = require("./utils/db");
+const request = require("supertest");
+const chai = require("chai");
+const expect = chai.expect();
+const should = chai.should();
+beforeEach(setUpDataBase);
+describe('Crud testing', function() {
+   it('get user', function() {
+  request(app)
+.get('/user')
+.expect(200)
+.end(function(err, res) {
+});
+  });
+  it('post user', function() {
+const user = new User({firstName: "User",
+lastName: "One",
+age: 40,
+email: "user@one.com"});
+  request(app)
+.post('/user')
+.send(user)
+.expect(201)
+.end(function(err, res) {
+});
+  });
+  it('post user  unsuccessful', function() {
+  request(app)
+.post('/user')
+.send()
+.expect(400)
+.end(function(err, res) {
+});
+  });
+  it('patch user successful', function(done) {
+  request(app)
+.patch('/user/'+ userOneObjectID)
+.send({firstName: "User",
+lastName: "One",
+age: 40,
+email: "user@one.com"})
+.expect(Object.getOwnPropertyNames)
+.end(function(err, res) {
+  res.body.age.should.be.eql(40);
+  done();
+});
+  });
+  it('patch user unsuccessful', function() {
+  request(app)
+   .patch('/user/45')
+.send(
+  {lastName: "One"}
+)
+.expect(400)
+.end(function(err, res) {
+});
+  });
+  it('delete user successful', function() {
+  request(app)
+.delete('/user/950490345934/')
+.expect(200)
+.end(function(err, res) {
+});
+  });
+  it('delete user unsucessful', function() {
+  request(app)
+.delete('/user/78752/')
+.expect(400)
+.end(function(err, res) {
+});
+  });
+   
+});
