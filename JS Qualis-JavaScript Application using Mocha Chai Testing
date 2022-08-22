@@ -1,0 +1,21 @@
+indexTest.js
+
+var assert = require("assert");
+var converter = require('../src/index');
+describe('Converter', async function(){
+     // Write your code here
+    it('length convert', async() => {
+      assert.equal(converter.lengthConvert(5,6),30);
+    });
+    it('weight converter', async() => {
+      assert.equal(converter.weightConverter(12,6),2);
+    });
+    it('temperature converter', async() => {
+      let c = 2, p = 3, f = 4;
+      let result = c * p + f;
+      assert.equal(converter.tempConverter(c,p,f), result);
+    });
+    it('speed converter', async() => {
+      assert.equal(converter.speedConverter(5,6),30);
+    });     
+});
